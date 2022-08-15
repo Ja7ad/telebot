@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"time"
 
-	tele "github.com/Ja7ad/telebot.v4"
+	tele "github.com/Ja7ad/telebot"
 	"github.com/goccy/go-yaml"
 	"github.com/spf13/cast"
 )

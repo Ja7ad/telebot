@@ -1,4 +1,4 @@
-module github.com/Ja7ad/telebot.v4
+module github.com/Ja7ad/telebot
 
 go 1.13
 
