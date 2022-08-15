@@ -1,13 +1,9 @@
 # Telebot
->"I never knew creating Telegram bots could be so _sexy_!"
 
-[![GoDoc](https://godoc.org/gopkg.in/telebot.v3?status.svg)](https://godoc.org/gopkg.in/telebot.v3)
-[![GitHub Actions](https://github.com/tucnak/telebot/actions/workflows/go.yml/badge.svg)](https://github.com/tucnak/telebot/actions)
-[![codecov.io](https://codecov.io/gh/tucnak/telebot/coverage.svg?branch=v3)](https://codecov.io/gh/tucnak/telebot)
-[![Discuss on Telegram](https://img.shields.io/badge/telegram-discuss-0088cc.svg)](https://t.me/go_telebot)
+This project add with new feature base on https://github.com/tucnak/telebot
 
 ```bash
-go get -u gopkg.in/telebot.v3
+go get -u github.com/Ja7ad/telebot.v4
 ```
 
 * [Overview](#overview)
@@ -21,6 +17,7 @@ go get -u gopkg.in/telebot.v3
 	- [Editable](#editable)
 	- [Keyboards](#keyboards)
 	- [Inline mode](#inline-mode)
+    - [Proxy](#proxy)
 * [Contributing](#contributing)
 * [Donate](#donate)
 * [License](#license)
@@ -458,6 +455,35 @@ b.Handle(tele.OnQuery, func(c tele.Context) error {
 		CacheTime: 60, // a minute
 	})
 })
+```
+
+## Proxy
+You can set socks5 with auth for bot using options
+```go
+package main
+
+import (
+	"github.com/Ja7ad/telebot.v4"
+	"log"
+	"time"
+)
+
+func main() {
+	bot, err := telebot.NewBot(telebot.Settings{
+		Token:  "token",
+		Poller: &telebot.LongPoller{Timeout: 10 * time.Second},
+		Proxy:  &telebot.Proxy{Address: "ip:port"},
+	})
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	bot.Handle("/hello", func(c telebot.Context) error {
+		return c.Send("Hello!")
+	})
+
+	bot.Start()
+}
 ```
 
 There's not much to talk about really. It also supports some form of authentication

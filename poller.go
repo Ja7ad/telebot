@@ -9,7 +9,6 @@ import (
 // All pollers must implement Poll(), which accepts bot
 // pointer and subscription channel and start polling
 // synchronously straight away.
-//
 type Poller interface {
 	// Poll is supposed to take the bot object
 	// subscription channel and start polling
@@ -25,7 +24,6 @@ type Poller interface {
 // handling, banning or whatever.
 //
 // For heavy middleware, use increased capacity.
-//
 type MiddlewarePoller struct {
 	Capacity int // Default: 1
 	Poller   Poller

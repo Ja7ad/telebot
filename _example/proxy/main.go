@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gopkg.in/telebot.v3"
+	"github.com/Ja7ad/telebot.v4"
 	"log"
 	"time"
 )
