@@ -3,7 +3,7 @@
 This project add with new feature base on https://github.com/tucnak/telebot
 
 ```bash
-go get -u github.com/Ja7ad/telebot.v4
+go get -u github.com/Ja7ad/telebot
 ```
 
 * [Overview](#overview)
